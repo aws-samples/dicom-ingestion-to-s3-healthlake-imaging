@@ -1,6 +1,6 @@
 # DICOM DIMSE to S3 / Amazon HealthLake Imaging
 
-This repository contains the code to deploy an IoT edge solution that receives DICOM files from a DICOM DIMSE source ( PACS, VNA, CT scanners, etc...) and store them in S3 securely. The solution indexes the DICOM files in a database and queues each DICOM series to be imported in Amazon HealthLake Imaging. It is composed of an component running at the edge, managed by AWS Greengrass IOT service, and a DICOM ingestion pipeline running in AWS Cloud. The ingestion pipeline is entirely serverless, it relies on AWS Lmabda, AWS Aurora Serverless, SQS and S3. This solution can be configured to import the DICOM files in Amazon HealthLake Imaging (default configuration). The edge is 100% python based and could be deployed on windows or Linux OSes, on a physical machine, a virtual machine or even as a container. 
+This repository contains the code to deploy an Greengrass edge solution that receives DICOM files from a DICOM DIMSE source ( PACS, VNA, CT scanners, etc...) and store them in S3 securely. The solution indexes the DICOM files in a database and queues each DICOM series to be imported in Amazon HealthLake Imaging. It is composed of an component running at the edge, managed by AWS Greengrass IOT service, and a DICOM ingestion pipeline running in AWS Cloud. The ingestion pipeline is entirely serverless, it relies on AWS Lmabda, AWS Aurora Serverless, SQS and S3. This solution can be configured to import the DICOM files in Amazon HealthLake Imaging (default configuration). The edge is 100% python based and could be deployed on windows or Linux OSes, on a physical machine, a virtual machine or even as a container. 
 
  ![](./img/diagram.png)
 
@@ -99,13 +99,13 @@ The configuration of the stack is done in the file `config.py`. The following pa
     </TR>
 </TABLE>
 
-## Install an IOT Core device 
+## Install an Greengrass Core device 
 
 ### IOT Core device requirements
 Refer to the [AWS Greengrass IOT documentation](https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html) to ensure that the device meets the requirements.
 
 
-### Install an IOT Core device on Ubuntu 22.04.
+### Install an Greengrass Core device on Ubuntu 22.04.
 
 The steps below describe how to install an AWS Greengrass IoT device on a ubuntu 22.04 instance. The steps are similar for other operating systems.
 
@@ -236,7 +236,7 @@ You can verify that the data was properly indexed in the database and submitted 
 In the query editor, you can run the following queries to verify that the data was properly ingested in the database:
 
 ```sql
---DICOM Indexing Queries
+-- DICOM Indexing Queries
 SELECT * from Patient;
 SELECT * from Study;
 SELECT * from Series;
