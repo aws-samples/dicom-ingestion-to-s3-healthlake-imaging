@@ -133,7 +133,7 @@ The steps below describe how to install an AWS Greengrass IoT device on a ubuntu
         "Expiration": "2023-04-24T20:52:08+00:00"
     },
     "AssumedRoleUser": {
-        "AssumedRoleId": "AROAQTBUADFXSRM6QHHJF:GGInstaller",
+        "AssumedRoleId": "AROAQTBUADFXSREXAMPLE:GGInstaller",
         "Arn": "arn:aws:sts::[AWS_ACCOUNT]:assumed-role/iep2-GGInstallerRole/GGInstaller"
         }
     }

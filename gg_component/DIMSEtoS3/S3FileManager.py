@@ -12,8 +12,6 @@ from multiprocessing import Process, Queue
 class S3FileManager:
 
     session = None
-    #aws_access_key_id = 'AKIAQTBUADFXRM3Y56F2'
-    #aws_secret_access_key = '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'
     s3 = None
     status = 'idle'
     DICOMInstancetoSend = multiprocessing.Queue()
