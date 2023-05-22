@@ -9,6 +9,8 @@ import logging
 class SQSReceiver:
 
     session = None
+    # aws_access_key_id = 'AKIAQTBUADFXRM3Y56F2'
+    # aws_secret_access_key = '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'
     status = 'idle'
     EdgeId = None
     SendJobQueue = None
